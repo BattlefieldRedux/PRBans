@@ -1,0 +1,19 @@
+login {
+    .content {
+        width: 40%;
+        display: table;
+        margin: 50px auto;
+        padding: 20px;
+        .controls {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: center;
+            .login-error {
+                margin: 0;
+                color: red;
+                font-size: small;
+            }
+        }
+    }
+}

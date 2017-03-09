@@ -1,0 +1,21 @@
+<md-content>
+    <div class="content" layout="column" md-whiteframe="3">
+        <h3>Login:</h3>
+        <md-input-container class="md-block">
+            <label>Username</label>
+            <input ng-model="username" ng-disabled="$ctrl.Logging">
+        </md-input-container>
+
+        <md-input-container class="md-block">
+            <label>Password</label>
+            <input ng-model="password" type="password" ng-disabled="$ctrl.Logging">
+        </md-input-container>
+
+        <div class="controls">
+            <p class="login-error">{{$ctrl.LoginError}}</p>
+            <md-progress-circular md-mode="indeterminate" ng-show="$ctrl.Logging" md-diameter="20px"></md-progress-circular>
+            <md-button ng-click="$ctrl.doLogin(username, password)" ng-disabled="$ctrl.Logging">Login</md-button>
+        </div>
+
+    </div>
+</md-content>

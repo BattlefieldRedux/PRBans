@@ -1,0 +1,59 @@
+<div class="content">
+
+    <div class="controls">
+        <md-button class="return" ng-click="$ctrl.back()">
+            <span><i class="material-icons">arrow_back</i>Return</span>
+        </md-button>
+        <md-button class="return" ng-click="$ctrl.onEditClickButton()">
+            {{$ctrl.Edit ? "Save" : "Edit"}}
+        </md-button>
+        <md-button class="return" ng-show="$ctrl.Edit">
+            Discard
+        </md-button>
+    </div>
+
+
+    <div class="details" md-whiteframe="3">
+
+        <!-- Hash -->
+        <label>Hash</label>
+        <md-chips ng-model="$ctrl.Entry.Hash" readonly="!$ctrl.NewEntry" md-removable="$ctrl.NewEntry">
+            <md-chip-template> {{$chip}} </md-chip-template>
+        </md-chips>
+
+        <!-- Usernames -->
+        <label>Known Usernames</label>
+        <md-chips ng-model="$ctrl.Entry.Username" readonly="!$ctrl.Edit" md-removable="$ctrl.NewEntry">
+            <md-chip-template> {{$chip}} </md-chip-template>
+        </md-chips>
+
+
+        <!-- Known IPs -->
+        <label>Known IPs</label>
+        <md-chips ng-model="$ctrl.Entry.IPs" readonly="!$ctrl.Edit" md-removable="$ctrl.NewEntry">
+            <md-chip-template> {{$chip}} </md-chip-template>
+        </md-chips>
+
+        <!-- Ban Reasons -->
+        <label>Reasons for Ban</label>
+        <md-chips ng-model="$ctrl.Entry.Reasons" readonly="!$ctrl.Edit" md-removable="$ctrl.NewEntry">
+            <md-autocomplete md-min-length="0" md-items="item in $ctrl.Reasons">
+                <md-item-template>{{item}}</md-item-template>
+            </md-autocomplete>
+            <md-chip-template> {{$chip}} </md-chip-template>
+        </md-chips>
+
+
+        <!-- servers enforcing it-->
+        <label>Servers enforcing Ban</label>
+        <div layout="row">
+            <md-chips ng-model="$ctrl.Entry.Servers" readonly="true" md-removable="false" flex>
+                <md-chip-template> {{$chip}} </md-chip-template>
+            </md-chips>
+            <md-button class="return">
+                Ban user
+            </md-button>
+        </div>
+
+    </div>
+</div>

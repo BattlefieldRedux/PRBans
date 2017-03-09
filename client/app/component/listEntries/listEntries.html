@@ -1,0 +1,58 @@
+<md-content>
+    <div class="content">
+        <div class="controls">
+
+
+            <div layout="row">
+                <md-input-container class="md-block" flex>
+                    <label>Hash</label>
+                    <input ng-model="$ctrl.Search.Hash">
+                </md-input-container>
+
+                <md-input-container class="md-block" flex>
+                    <label>Username</label>
+                    <input ng-model="$ctrl.Search.Username">
+                </md-input-container>
+            </div>
+
+            <md-input-container class="md-block">
+                <label>Reasons</label>
+                <md-chips ng-model="$ctrl.Search.Reasons" md-autocomplete-snap md-require-match>
+                    <md-autocomplete md-no-cache="true" md-min-length="0" md-selected-item="$ctrl.SelectedItem" md-search-text="search.hash" md-items="item in $ctrl.Reasons" placeholder="Pick something...">
+                        <md-item-template>{{item}}</md-item-template>
+                    </md-autocomplete>
+                    <md-chip-template>{{$chip}}</md-chip-template>
+                </md-chips>
+            </md-input-container>
+        </div>
+        <div class="entries">
+
+
+            <div md-whiteframe="3" ng-cloak>
+                <div layout="row" layout-sm="column" layout-align="space-around" ng-show="!$ctrl.Entries ">
+                    <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+                </div>
+
+                <md-list ng-repeat="entry in $ctrl.Entries">
+
+                    <md-list-item ng-repeat="hash in entry.Hash | filter:$ctrl.Search.Hash" ui-sref="detailEntry({hash: hash})">
+                        <div class="md-list-item-text hash" layout="column" layout-align="center">
+                            <h3>{{hash}}</h3>
+                        </div>
+
+                        <div class="md-list-item-text md-secondary reasons" layout="column" layout-align="center">
+                            <p>Hacking</p>
+                        </div>
+
+                        <md-button class="md-secondary md-icon-button" ng-href="{{entry.URL}}" title="Launch Google.com in new window" target="_blank" aria-label="Report thread" class="md-icon-button launch">
+                            <md-icon> link </md-icon>
+                        </md-button>
+
+                    </md-list-item>
+                </md-list>
+            </div>
+        </div>
+        <md-button class="md-fab md-primary" aria-label="Profile" ui-sref="detailEntry({hash: 'new'})">
+            <md-icon>add</md-icon>
+        </md-button>
+</md-content>

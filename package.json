@@ -1,0 +1,39 @@
+{
+  "name": "prbans",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "author": "UTurista",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.6.2",
+    "angular-animate": "^1.6.2",
+    "angular-aria": "^1.6.2",
+    "angular-material": "^1.1.3",
+    "angular-ui-router": "1.0.0-rc.1",
+    "mongodb": "^2.2.24",
+    "promise": "^7.1.1",
+    "restify": "^4.3.0"
+  },
+  "devDependencies": {
+    "@types/angular": "^1.6.7",
+    "@types/angular-ui-router": "^1.1.36",
+    "@types/mongodb": "^2.1.41",
+    "@types/promise": "^7.1.30",
+    "@types/restify": "^2.0.41",
+    "browserify": "^14.1.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-debug": "^3.1.0",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-live-server": "0.0.30",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^2.0.1",
+    "gulp-util": "^3.0.8",
+    "tsify": "^3.0.1",
+    "typescript": "^2.2.1",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
+  }
+}

@@ -1,0 +1,14 @@
+detail-entry {
+    .content {
+        display: table;
+        width: 80%;
+        margin: 50px auto;
+        .return span {
+            display: flex;
+            align-items: center;
+        }
+        .details {
+            padding: 20px;
+        }
+    }
+}
